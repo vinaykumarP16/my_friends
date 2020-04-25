@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CALCULATOR</title>
+	<script>
+		function insert(num) {
+			document.form.textview.value=document.form.textview.value+num
+			// body...
+		}
+		function equal(){
+			var exp=document.form.textview.value;
+			if (exp) {
+				document.form.textview.value=eval(exp)
+			}	
+		}
+
+		function clean(){
+			document.form.textview.value="";
+		}
+		function back(){
+			var exp=document.form.textview.value;
+			document.form.textview.value=exp.substring(0,exp.length-1);
+		}
+		function sinclick(){
+			document.form.textview.value=Math.sin(document.form.textview.value)
+		}
+		function cosclick(){
+			document.form.textview.value=Math.cos(document.form.textview.value)
+		}
+		function tanclick(){
+			document.form.textview.value=Math.tan(document.form.textview.value)
+		}
+		function logclick(){
+			document.form.textview.value=Math.log(document.form.textview.value)
+		}
+		function sqrtclick(){
+			document.form.textview.value=Math.sqrt(document.form.textview.value)
+		}
+		function cbrtclick(){
+			document.form.textview.value=Math.cbrt(document.form.textview.value)
+		}
+		function roundclick(){
+			document.form.textview.value=Math.round(document.form.textview.value)
+		}
+		function ranclick(){
+			document.form.textview.value=Math.random(document.form.textview.value)
+		}
+	</script>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+
+		}
+
+		.button{
+			width:48px;
+			height: 50px;
+			font-size: 25px;
+			margin:2px;
+			cursor: pointer;
+			background: #03a9f4;
+			border-radius: 5px;
+			border:none;
+			color: white;
+			/*transition: all 1s;*/
+		}
+
+		.button:hover{
+			background-color: #586d77;
+			/*transform: scaleX(1);*/
+			
+		}
+		.textview{
+			width:203px;
+			margin: 5px;
+			font-size: 25px;
+			padding: 5px;
+			border:none;
+			border-radius: 5px;
+		}
+		.main{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+		}
+		body{
+			/*background:linear-gradient(to right,red,blue,orange);*/
+			background:url("1.jpg");
+			/*background: cover;*/
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="back"></div>
+ <div class="main">
+ 	<form name='form'>
+ 		<input class="textview" type="" name="textview">
+ 	</form>
+ 	<table>
+ 		<tr>
+ 			<td><input class="button" type="button" name="" value="C" onclick="clean()" ></td>
+ 			<td><input class="button" type="button" name="" value="<" onclick="back()" ></td>
+ 			<td><input class="button" type="button" name="" value="/" onclick="insert('/')" ></td>
+ 			<td><input class="button"type="button" name="" value="x" onclick="insert('*')" ></td>
+ 		</tr>
+ 		<tr>
+ 			<td><input class="button" type="button" name="" value="sqrt" onclick="sqrtclick()"></td>
+ 			<td><input class="button" type="button" name="" value="cbrt" onclick="cbrtclick()"></td>
+ 			<td><input class="button" type="button" name="" value="round" onclick="roundclick()"></td>
+ 			<td><input class="button" type="button" name="" value="ran" onclick="ranclick()"></td>
+ 			
+ 		</tr>
+ 		<tr>
+ 			<td><input class="button" type="button" name="" value="sin" onclick="sinclick()"></td>
+ 			<td><input class="button" type="button" name="" value="cos" onclick="cosclick()"></td>
+ 			<td><input class="button" type="button" name="" value="tan" onclick="tanclick()"></td>
+ 			<td><input class="button" type="button" name="" value="log" onclick="logclick()"></td>
+ 			
+ 		</tr>
+ 		<tr>
+ 			<td><input class="button" type="button" name="" value="7" onclick="insert(7)"></td>
+ 			<td><input class="button" type="button" name="" value="8" onclick="insert(8)"></td>
+ 			<td><input class="button" type="button" name="" value="9" onclick="insert(9)"></td>
+ 			<td><input class="button" type="button" name="" value="-" onclick="insert('-')"></td>
+ 		</tr>
+ 		<tr>
+ 			<td><input class="button" type="button" name="" value="4" onclick="insert(4)"></td>
+ 			<td><input class="button" type="button" name="" value="5" onclick="insert(5)"></td>
+ 			<td><input class="button" type="button" name="" value="6" onclick="insert(6)"></td>
+ 			<td><input class="button" type="button" name="" value="+" onclick="insert('+')"></td>
+ 		</tr>
+ 		<tr>
+ 			<td><input class="button" type="button" name="" value="1" onclick="insert(1)"></td>
+ 			<td><input class="button" type="button" name="" value="2" onclick="insert(2)"></td>
+ 			<td><input class="button" type="button" name="" value="3" onclick="insert(3)"></td>
+ 			<td rowspan="2"><input rowspan="2"  style="height:106px;" class="button" type="button" name="" value="=" onclick="equal()"></td>
+ 		</tr>
+ 		<tr>
+ 			<td colspan="2"><input class="button" style="width:106px" type="button" name="" value="0" onclick="insert(0)"></td>
+ 			<td><input class="button" type="button" name="" value="." onclick="insert('.')"></td>
+ 		</tr>
+ 		<!-- <tr>
+ 			<td colspan="4"><input  style="width:213px" class="button" type="button" name="" value="VINAY" onclick="insert('VINAY')"></td>
+ 		</tr> -->
+ 	</table>
+ </div>
+</body>
+</html>
